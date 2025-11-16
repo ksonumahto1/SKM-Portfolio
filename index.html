@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Sonu Kumar | Consulting & Analytics Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Sonu Kumar – Aspiring Consultant & Business/Data Analyst | MBA (IIT Jodhpur) & MS in Business Analytics (CWRU) | Strategy · Analytics · Python · SQL · Tableau · Power BI"
-  />
+  <meta name="description"
+    content="Sonu Kumar – Aspiring Consultant & Business/Data Analyst | MBA (IIT Jodhpur) & MS in Business Analytics (CWRU) | Strategy · Analytics · Python · SQL · Tableau · Power BI" />
+
   <style>
+    /* ------------------ THEME (Whitish Stone + Dark Text) ------------------ */
     :root {
-      /* replaced dark theme with soft stone theme */
-      --bg: #f4f1ea;
-      --bg-soft: #f8f5ef;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.1);
-      --accent-strong: #0ea5e9;
-      --text: #222222;
-      --muted: #6f6f6f;
-      --card: #ffffffee;
-      --border-subtle: rgba(0, 0, 0, 0.12);
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.12);
+      --bg: #F5F3F0;
+      --text: #1a1a1a;
+      --text-muted: #4a4a4a;
+      --accent: #0ea5e9;
+      --accent-soft: rgba(14, 165, 233, 0.08);
+      --card-bg: #ffffff;
+      --card-border: #e5e5e5;
       --radius-lg: 18px;
       --radius-xl: 22px;
-      --radius-pill: 999px;
-      --transition-fast: 0.18s ease-out;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
     }
 
     * {
@@ -34,23 +30,10 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-
-      /* WHITISH STONE BACKGROUND (Requested) */
-      background: 
-        radial-gradient(circle at top left, #f9f7f2, #f1eee7 40%, #eae6df 90%),
-        url('https://www.transparenttextures.com/patterns/white-wall.png');
-
-      background-size: cover;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
     img {
@@ -60,266 +43,201 @@
 
     .page {
       max-width: 1120px;
-      margin: 0 auto;
+      margin: auto;
       padding: 24px 16px 64px;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(18px);
-      background: rgba(255, 255, 255, 0.6);
-      border-bottom: 1px solid rgba(0,0,0,0.07);
+      background: rgba(245, 243, 240, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      border-bottom: 1px solid #ddd;
     }
 
     .nav {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 14px 16px 10px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
-    }
-
-    .nav-left {
-      display: flex;
+      padding: 14px 0;
       align-items: center;
-      gap: 10px;
-    }
-
-    .nav-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 14px;
-      color: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.15);
     }
 
     .nav-name {
       font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: #222;
+      font-size: 15px;
     }
 
     .nav-links {
       display: flex;
-      gap: 14px;
-      font-size: 13px;
-      color: var(--muted);
+      gap: 18px;
+      font-size: 14px;
     }
 
     .nav-links a {
-      padding: 6px 10px;
-      border-radius: 999px;
-      transition: 0.2s;
-    }
-
-    .nav-links a:hover {
-      background: rgba(0, 0, 0, 0.05);
-      color: #000;
-      transform: translateY(-1px);
-    }
-
-    .nav-cta {
-      display: flex;
-      gap: 8px;
-      align-items: center;
+      color: var(--text-muted);
+      text-decoration: none;
     }
 
     .btn {
-      border-radius: var(--radius-pill);
-      padding: 8px 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
       font-size: 13px;
-      font-weight: 500;
-      border: 1px solid transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
       background: var(--accent-soft);
-      color: var(--accent-strong);
-      cursor: pointer;
-      transition: var(--transition-fast);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      text-decoration: none;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+      background: var(--accent);
       color: white;
-      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+      border: none;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.32);
-    }
-
-    .btn-outline {
-      border-color: rgba(0, 0, 0, 0.2);
-      background: white;
-      color: #222;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      background: #f9f9f9;
-      transform: translateY(-1px);
-    }
-
-    /* ---------- HERO ---------- */
+    /* ------------------ HERO ------------------ */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.4fr);
-      gap: 28px;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
       align-items: center;
-      padding: 32px 0 18px;
-    }
-
-    .hero-title-kicker {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent-strong);
-      margin-bottom: 10px;
     }
 
     .hero-title {
-      font-size: clamp(30px, 4vw, 38px);
-      line-height: 1.15;
+      font-size: 38px;
       font-weight: 700;
-      margin-bottom: 10px;
-      color: #222;
-    }
-
-    .hero-highlight {
-      background: linear-gradient(to right, #0ea5e9, #a855f7);
-      -webkit-background-clip: text;
-      color: transparent;
+      margin-bottom: 12px;
     }
 
     .hero-subtitle {
-      font-size: 15px;
-      color: #444;
-      max-width: 620px;
+      font-size: 16px;
+      color: var(--text-muted);
       margin-bottom: 18px;
     }
 
-    .hero-tags .pill {
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
       background: #ffffff;
-      border: 1px solid rgba(0,0,0,0.1);
-      color: #444;
+      border: 1px solid #ddd;
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
-    .pill-dot {
-      background: var(--accent);
-    }
-
-    /* ----- Hero Card ----- */
+    /* ------------------ HERO CARD ------------------ */
     .hero-card {
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(0,0,0,0.1);
-      box-shadow: var(--shadow-soft);
+      background: var(--card-bg);
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
       position: relative;
-      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 330px;
+      margin: auto;
+      display: block;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      flex: 1;
+      background: #fafafa;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid #e5e5e5;
+      font-size: 13px;
+    }
+
+    .metric-label {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .metric-value {
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .metric-sub {
+      font-size: 12px;
+      color: #666;
     }
 
     .hero-card-footer {
-      border-top: 1px dashed rgba(0,0,0,0.2);
-      padding-top: 8px;
-      font-size: 11px;
-      color: #555;
+      margin-top: 14px;
+      padding-top: 12px;
+      font-size: 13px;
+      color: #444;
+      border-top: 1px dashed #ccc;
     }
 
     .hero-badge-travel {
-      background: #ffffffdd;
-      border-top: 1px solid rgba(0,0,0,0.1);
-      border-left: 1px solid rgba(0,0,0,0.1);
-      color: #333;
+      margin-top: 12px;
+      font-size: 12px;
+      padding: 10px 12px;
+      background: #fafafa;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      line-height: 1.4;
     }
 
-    /* ---------- SECTIONS ---------- */
+    /* ------------------ SECTIONS ------------------ */
     section {
-      margin-top: 38px;
-    }
-
-    .section-kicker {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent-strong);
+      margin-top: 50px;
     }
 
     .section-title {
-      font-size: 20px;
+      font-size: 26px;
       font-weight: 600;
-      color: #222;
+      margin-bottom: 8px;
     }
 
     .section-subtitle {
-      font-size: 13px;
-      color: #555;
-      max-width: 460px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
     }
 
-    /* ---------- CARDS & GRIDS ---------- */
     .card {
-      background: #ffffff;
-      border-radius: var(--radius-xl);
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(0,0,0,0.1);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .card p {
-      color: #444;
-    }
-
-    .timeline-pill {
-      background: #fafafa;
-      border: 1px solid rgba(0,0,0,0.15);
-      color: #333;
-    }
-
-    .project-card {
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,0.1);
-    }
-
-    .badge {
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--accent-strong);
-      border: 1px solid rgba(56, 189, 248, 0.4);
-    }
-
-    /* CONTACT */
-    .contact-card {
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,0.1);
+      background: var(--card-bg);
+      padding: 22px;
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
     }
 
     footer {
-      color: #666;
-      border-top: 1px solid rgba(0,0,0,0.1);
+      padding-top: 30px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero,
-      .about-grid,
-      .exp-grid,
-      .edu-skills-grid,
-      .rec-int-grid {
-        grid-template-columns: minmax(0, 1fr);
+    /* MOBILE */
+    @media(max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-img {
+        max-width: 260px;
       }
 
       .nav-links {
@@ -330,17 +248,156 @@
 </head>
 
 <body>
-  <!-- YOUR FULL PAGE CONTENT BELOW (unchanged) -->
-  
-  <!-- Everything from HERO, ABOUT, EXPERIENCE, PROJECTS, EDUCATION, RECOMMENDATIONS, CONTACT, FOOTER stays exactly the same -->
+  <header>
+    <div class="page nav">
+      <div class="nav-name">Sonu Kumar</div>
 
-  <!-- Due to message limits, the HTML after <body> is unchanged from your original.  
-       Paste your original content starting from <header> here. -->
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+      </nav>
 
-  <!-- ✨ If you want, I can paste the FULL HTML (all sections) again in the next message. Just say “FULL FULL CODE”. -->
+      <a class="btn" href="https://www.linkedin.com/in/sonu-kumar-mahato/" target="_blank">LinkedIn</a>
+    </div>
+  </header>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <div class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">Aspiring Consultant & Data/Business Analyst</h1>
+
+        <p class="hero-subtitle">
+          MBA (IIT Jodhpur) · MS in Business Analytics (CWRU)  
+          Helping organizations move from raw data to clear, actionable insights.
+        </p>
+
+        <div class="hero-tags">
+          <span class="pill">Consulting</span>
+          <span class="pill">Business Analytics</span>
+          <span class="pill">Python · SQL · BI</span>
+          <span class="pill">Strategy</span>
+        </div>
+
+        <a class="btn-primary btn" href="#contact">Let's work together</a>
+      </div>
+
+      <div class="hero-card">
+        <img class="hero-img" src="YOUR_IMAGE.png" alt="Sonu Kumar">
+
+        <div class="metrics-row">
+          <div class="metric">
+            <div class="metric-label">Key Experience</div>
+            <div class="metric-value">Consulting & Analytics</div>
+            <div class="metric-sub">LayerZero · 130+ IndiaMART Clients</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Tools</div>
+            <div class="metric-value">Python · SQL · BI</div>
+            <div class="metric-sub">Tableau · Power BI · Excel</div>
+          </div>
+        </div>
+
+        <div class="hero-card-footer">
+          <strong>Currently TA, Python Programming</strong> — Case Western Reserve University.
+        </div>
+
+        <div class="hero-badge-travel">
+          <strong>Beyond work:</strong><br>
+          Travelling · Reading · Exploring cultures  
+          Always learning, always improving.
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">At the intersection of strategy, analytics & execution.</p>
+
+      <div class="card">
+        <p>
+          I bring a dual foundation — MBA (IIT Jodhpur) + MS Business Analytics (CWRU) —
+          and hands-on experience in consulting, analytics, BI, and B2B sales.
+        </p>
+        <p>
+          I’ve advised LayerZero Power Systems on sustainability, managed
+          130+ B2B clients at IndiaMART, and built BI dashboards at EaseMyGrowth & pigybak.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">Selected roles that shaped my consulting mindset.</p>
+
+      <div class="card">
+        <strong>Teaching Assistant – Python Programming</strong><br>
+        Case Western University (2025–Present)
+      </div>
+
+      <div class="card">
+        <strong>Data Analyst – pigybak</strong><br>
+        Marketing, A/B testing, dashboards.
+      </div>
+
+      <div class="card">
+        <strong>Assistant Manager – IndiaMART</strong><br>
+        130+ B2B clients · Ranked 4th zonally.
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">Selected consulting & analytics work.</p>
+
+      <div class="card">
+        <strong>LayerZero Sustainability Roadmap</strong><br>
+        Tableau, strategy, ESG, scenario modeling.
+      </div>
+
+      <div class="card">
+        <strong>JD.com Customer & Inventory Analytics</strong><br>
+        Segmentation · Forecasting · Dashboarding.
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="card">
+        <strong>MS in Business Analytics</strong> — CWRU (GPA 3.9)
+      </div>
+
+      <div class="card">
+        <strong>MBA (Technology)</strong> — IIT Jodhpur (Rank 1)
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Let’s Connect</h2>
+      <p class="section-subtitle">Open to Business Analyst · Data Analyst · Consulting roles.</p>
+
+      <a class="btn-primary btn" href="mailto:ksonumahto@gmail.com">Email Me</a>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Sonu Kumar · Built with clarity & purpose.
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
