@@ -1,403 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>Sonu Kumar | Consulting & Analytics Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="Sonu Kumar – Aspiring Consultant & Business/Data Analyst | MBA (IIT Jodhpur) & MS in Business Analytics (CWRU) | Strategy · Analytics · Python · SQL · Tableau · Power BI" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sonu Kumar | Portfolio</title>
 
-  <style>
-    /* ------------------ THEME (Whitish Stone + Dark Text) ------------------ */
-    :root {
-      --bg: #F5F3F0;
-      --text: #1a1a1a;
-      --text-muted: #4a4a4a;
-      --accent: #0ea5e9;
-      --accent-soft: rgba(14, 165, 233, 0.08);
-      --card-bg: #ffffff;
-      --card-border: #e5e5e5;
-      --radius-lg: 18px;
-      --radius-xl: 22px;
-      --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-    }
+<style>
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* ============================= */
+/* LIGHT STONE BACKGROUND */
+/* (Scrolling texture) */
+/* ============================= */
 
-    body {
-      font-family: system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+    font-family: "Inter", sans-serif;
+    color: #111;
+    line-height: 1.6;
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    /* Embedded stone texture */
+    background: #f5f3f0 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAB/UlEQVR4Xu2aS07DMBCEp7iGukdxbYlR5CaTKtyAEoil6QKq7Wv4tM6CFPAnCmvYzu3/n6PvJEa3QgRIFJQG5uVKyXjH9MuNoMNFcQJUOIJcChn1ytY1/6Yr2vNhbbX6YsJhBKt3vnDnN/SUXOcDSBx/OVCkVbkqVKgf/mBlC9ZwTe74MkRUYw35vj0IadB1iKsFcEYJIyaKOA1NV1npZpNigC4D4ew3Efr2E1VlzDqgW8sELpAoACKP5NdQ4KJIp4jOSAmhpBREUiSYXNjZ1GDZCBoBPXaAgNsq4CPGK/cHBXHiKBnKwxLBzME2YkdE+5EYXPLkZXl2bqsxvFeoJEBRDigw1VE3D6MT0SqnX+ANXoy2cwrRez2oJ6TP2RFxYDsAmAJGEGZm4G6dkprdFMIALlTyBCQRAiIC1FgCdxt0AGJi/7wWGINuD/7++PK5EONosFVJeFt3PcTJS3BM4tiTqcKoy0eZZ+j9RnBbTK1ZBOqVakiobP6KyHR+Y6z3Y0JVpaz6RtWLpmjHtkobaN6D+PfYZ7R6pujISiFDUFxIr05oig3NbS1RyCBjI827F7kKIhxCB3sI5IAucs5cjoxOYD65gis6pZeRAAAAAElFTkSuQmCC") repeat;
+}
 
-    .page {
-      max-width: 1120px;
-      margin: auto;
-      padding: 24px 16px 64px;
-    }
+/* ============================= */
+/* LAYOUT */
+/* ============================= */
 
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(245, 243, 240, 0.8);
-      backdrop-filter: blur(10px);
-      z-index: 10;
-      border-bottom: 1px solid #ddd;
-    }
+.container {
+    width: 88%;
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 40px;
+}
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 14px 0;
-      align-items: center;
-    }
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
 
-    .nav-name {
-      font-weight: 600;
-      font-size: 15px;
-    }
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 0;
+    gap: 40px;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      font-size: 14px;
-    }
+.hero-text {
+    flex: 1;
+}
 
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-    }
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: #222;
+}
 
-    .btn {
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      background: var(--accent-soft);
-      text-decoration: none;
-    }
+.hero-text h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 12px;
+    color: #444;
+}
 
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      border: none;
-    }
+.hero-photo {
+    flex: 1;
+    text-align: right;
+}
 
-    /* ------------------ HERO ------------------ */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 30px;
-      margin-top: 40px;
-      align-items: center;
-    }
+.hero-photo img {
+    width: 350px;
+    border-radius: 12px;
+    filter: drop-shadow(0px 6px 12px rgba(0,0,0,0.25));
+}
 
-    .hero-title {
-      font-size: 38px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
+/* ============================= */
+/* DARK CARDS FOR SECTIONS */
+/* ============================= */
 
-    .hero-subtitle {
-      font-size: 16px;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-    }
+.section {
+    background: #111;
+    color: #fff;
+    padding: 40px;
+    border-radius: 14px;
+    margin: 40px 0;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+}
 
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
+/* Section Titles */
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
 
-    .pill {
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid #ddd;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+/* ============================= */
+/* EXPERIENCE BLOCK */
+/* ============================= */
 
-    /* ------------------ HERO CARD ------------------ */
-    .hero-card {
-      background: var(--card-bg);
-      padding: 22px;
-      border-radius: 22px;
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow);
-      position: relative;
-    }
+.experience-item {
+    margin-bottom: 22px;
+}
 
-    .hero-img {
-      width: 100%;
-      max-width: 330px;
-      margin: auto;
-      display: block;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
-    }
+.experience-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
 
-    .metrics-row {
-      display: flex;
-      gap: 12px;
-      margin-top: 18px;
-    }
+.experience-item .role {
+    font-size: 16px;
+    opacity: 0.85;
+}
 
-    .metric {
-      flex: 1;
-      background: #fafafa;
-      padding: 12px;
-      border-radius: 14px;
-      border: 1px solid #e5e5e5;
-      font-size: 13px;
-    }
+/* ============================= */
+/* PROJECTS */
+/* ============================= */
 
-    .metric-label {
-      color: var(--text-muted);
-      font-size: 12px;
-    }
+.project {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
 
-    .metric-value {
-      font-weight: 600;
-      margin-top: 3px;
-    }
+.project h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 
-    .metric-sub {
-      font-size: 12px;
-      color: #666;
-    }
+/* ============================= */
+/* FOOTER */
+/* ============================= */
 
-    .hero-card-footer {
-      margin-top: 14px;
-      padding-top: 12px;
-      font-size: 13px;
-      color: #444;
-      border-top: 1px dashed #ccc;
-    }
+footer {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 15px;
+    color: #333;
+}
 
-    .hero-badge-travel {
-      margin-top: 12px;
-      font-size: 12px;
-      padding: 10px 12px;
-      background: #fafafa;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      line-height: 1.4;
-    }
-
-    /* ------------------ SECTIONS ------------------ */
-    section {
-      margin-top: 50px;
-    }
-
-    .section-title {
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 22px;
-      border: 1px solid var(--card-border);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      margin-bottom: 18px;
-    }
-
-    footer {
-      padding-top: 30px;
-      text-align: center;
-      color: #777;
-      font-size: 13px;
-    }
-
-    /* MOBILE */
-    @media(max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-img {
-        max-width: 260px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-  </style>
+</style>
 </head>
-
 <body>
-  <header>
-    <div class="page nav">
-      <div class="nav-name">Sonu Kumar</div>
 
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-      </nav>
+<div class="container">
 
-      <a class="btn" href="https://www.linkedin.com/in/sonu-kumar-mahato/" target="_blank">LinkedIn</a>
-    </div>
-  </header>
-
-  <div class="page">
-
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
     <section class="hero">
-      <div>
-        <h1 class="hero-title">Aspiring Consultant & Data/Business Analyst</h1>
-
-        <p class="hero-subtitle">
-          MBA (IIT Jodhpur) · MS in Business Analytics (CWRU)  
-          Helping organizations move from raw data to clear, actionable insights.
-        </p>
-
-        <div class="hero-tags">
-          <span class="pill">Consulting</span>
-          <span class="pill">Business Analytics</span>
-          <span class="pill">Python · SQL · BI</span>
-          <span class="pill">Strategy</span>
+        <div class="hero-text">
+            <h1>Sonu Kumar</h1>
+            <h2>Aspiring Consultant & Business/Data Analyst</h2>
+            <p style="margin-top: 16px; font-size: 17px; color:#333;">
+                MBA (IIT Jodhpur) • MS Business Analytics (CWRU) <br>
+                Strategy • Analytics • Python • SQL • Tableau • Power BI
+            </p>
         </div>
 
-        <a class="btn-primary btn" href="#contact">Let's work together</a>
-      </div>
-
-      <div class="hero-card">
-        <img class="hero-img" src="YOUR_IMAGE.png" alt="Sonu Kumar">
-
-        <div class="metrics-row">
-          <div class="metric">
-            <div class="metric-label">Key Experience</div>
-            <div class="metric-value">Consulting & Analytics</div>
-            <div class="metric-sub">LayerZero · 130+ IndiaMART Clients</div>
-          </div>
-
-          <div class="metric">
-            <div class="metric-label">Tools</div>
-            <div class="metric-value">Python · SQL · BI</div>
-            <div class="metric-sub">Tableau · Power BI · Excel</div>
-          </div>
+        <div class="hero-photo">
+            <img src="https://i.imgur.com/SEFvnYh.png" alt="Sonu Kumar">
         </div>
-
-        <div class="hero-card-footer">
-          <strong>Currently TA, Python Programming</strong> — Case Western Reserve University.
-        </div>
-
-        <div class="hero-badge-travel">
-          <strong>Beyond work:</strong><br>
-          Travelling · Reading · Exploring cultures  
-          Always learning, always improving.
-        </div>
-      </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">At the intersection of strategy, analytics & execution.</p>
-
-      <div class="card">
+    <!-- ================= ABOUT ================= -->
+    <section class="section">
+        <h2>About Me</h2>
         <p>
-          I bring a dual foundation — MBA (IIT Jodhpur) + MS Business Analytics (CWRU) —
-          and hands-on experience in consulting, analytics, BI, and B2B sales.
+            I am a results-driven analytics and strategy professional passionate about solving business problems.
+            I love traveling, reading, and creating measurable value for businesses through structured thinking and
+            data-driven decision-making.
         </p>
-        <p>
-          I’ve advised LayerZero Power Systems on sustainability, managed
-          130+ B2B clients at IndiaMART, and built BI dashboards at EaseMyGrowth & pigybak.
-        </p>
-      </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <h2 class="section-title">Experience</h2>
-      <p class="section-subtitle">Selected roles that shaped my consulting mindset.</p>
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="section">
+        <h2>Experience</h2>
 
-      <div class="card">
-        <strong>Teaching Assistant – Python Programming</strong><br>
-        Case Western University (2025–Present)
-      </div>
+        <div class="experience-item">
+            <h3>Teaching Assistant — Case Western Reserve University</h3>
+            <p class="role">Python Programming • 2025 – Present</p>
+        </div>
 
-      <div class="card">
-        <strong>Data Analyst – pigybak</strong><br>
-        Marketing, A/B testing, dashboards.
-      </div>
+        <div class="experience-item">
+            <h3>Data Analyst — Pigybak</h3>
+            <p class="role">2025 • Cleveland</p>
+        </div>
 
-      <div class="card">
-        <strong>Assistant Manager – IndiaMART</strong><br>
-        130+ B2B clients · Ranked 4th zonally.
-      </div>
+        <div class="experience-item">
+            <h3>Data Analyst — EaseMyGrowth</h3>
+            <p class="role">2024 • India</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Assistant Manager — IndiaMART</h3>
+            <p class="role">2022 – 2023 • Surat</p>
+        </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-subtitle">Selected consulting & analytics work.</p>
+    <!-- ================= PROJECTS ================= -->
+    <section class="section">
+        <h2>Projects</h2>
 
-      <div class="card">
-        <strong>LayerZero Sustainability Roadmap</strong><br>
-        Tableau, strategy, ESG, scenario modeling.
-      </div>
+        <div class="project">
+            <h3>JD.com Analytics Project</h3>
+            <p>Customer segmentation, forecasting (XGBoost), Tableau dashboards.</p>
+        </div>
 
-      <div class="card">
-        <strong>JD.com Customer & Inventory Analytics</strong><br>
-        Segmentation · Forecasting · Dashboarding.
-      </div>
+        <div class="project">
+            <h3>LayerZero Sustainability Roadmap</h3>
+            <p>10-year carbon reduction strategy • SDG alignment • Tableau analytics.</p>
+        </div>
+
+        <div class="project">
+            <h3>Insurance Claims Analytics</h3>
+            <p>Predictive modeling • Logistic Regression • Random Forest • Feature insights.</p>
+        </div>
+
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education">
-      <h2 class="section-title">Education</h2>
+</div>
 
-      <div class="card">
-        <strong>MS in Business Analytics</strong> — CWRU (GPA 3.9)
-      </div>
-
-      <div class="card">
-        <strong>MBA (Technology)</strong> — IIT Jodhpur (Rank 1)
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2 class="section-title">Let’s Connect</h2>
-      <p class="section-subtitle">Open to Business Analyst · Data Analyst · Consulting roles.</p>
-
-      <a class="btn-primary btn" href="mailto:ksonumahto@gmail.com">Email Me</a>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Sonu Kumar · Built with clarity & purpose.
-    </footer>
-
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<footer>
+    © 2025 Sonu Kumar • Portfolio Website
+</footer>
 
 </body>
 </html>
